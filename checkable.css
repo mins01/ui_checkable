@@ -76,8 +76,8 @@
 .checkable.check-box.rounded::after{
     border-radius: 50% !important;
 }
-.checkable.angled::before,
-.checkable.check-box.angled::after{
+.checkable.square::before,
+.checkable.check-box.square::after{
     border-radius: 0 !important;
 }
 .checkable.diamond::before,
