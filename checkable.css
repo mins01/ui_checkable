@@ -43,6 +43,9 @@
 
     white-space: nowrap;
 }
+.checkable:hover{
+    filter:brightness(0.8);
+}
 .checkable:disabled{
     filter:contrast(0.2) brightness(1.2);
 }
