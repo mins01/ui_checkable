@@ -127,6 +127,12 @@
                 <label><input type="checkbox" name="f" value="5" class="checkable check-text" style="--check-text:'漢字'" checked> --check-text:'漢字'</label>
             </form>
             <form onsubmit="formOnsubmit(this);return false;">
+                <h3>--check-img <button class="btn btn-primary btn-sm">submit</button></h3>
+                <label><input type="checkbox" name="f" value="1" class="checkable check-img" style="" checked> .check-img</label>
+                <label><input type="checkbox" name="f" value="1" class="checkable check-img" style="--check-img:url('checkable/check-img-2.png')" checked> --check-img:url('checkable/check-img-2.png')</label>
+                
+            </form>
+            <form onsubmit="formOnsubmit(this);return false;">
                 <h3>--check-text-font-size <button class="btn btn-primary btn-sm">submit</button></h3>
                 <label><input type="checkbox" name="f" value="4" class="checkable check-text" style="--check-text:'🦄';--check-text-font-size:0.5em" checked> --check-text-font-size:0.5em</label>
                 <label><input type="checkbox" name="f" value="4" class="checkable check-text" style="--check-text:'🦄';--check-text-font-size:1em" checked> --check-text-font-size:1em</label>
@@ -314,15 +320,6 @@
                 <label><input type="checkbox" name="f" value="6" class="checkable check-text border-danger danger" checked> .checkable.border-danger.danger</label>
                 <label><input type="checkbox" name="f" value="7" class="checkable check-text border-light light" checked> .checkable.border-light.light</label>
                 <label><input type="checkbox" name="f" value="8" class="checkable check-text border-dark dark" checked> .checkable.border-dark.dark</label>
-            </form>
-            <form onsubmit="formOnsubmit(this);return false;">
-                <h3>color(--checked-color) with .check-text <button class="btn btn-primary btn-sm">submit</button></h3>
-            </form>
-            <form onsubmit="formOnsubmit(this);return false;">
-                <h3>color(--border-color) with .check-text <button class="btn btn-primary btn-sm">submit</button></h3>
-            </form>
-            <form onsubmit="formOnsubmit(this);return false;">
-                <h3>color(--checked-color and --border-color) with .check-text <button class="btn btn-primary btn-sm">submit</button></h3>
             </form>
         </div>
     </div>
