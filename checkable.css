@@ -51,7 +51,7 @@
     filter:brightness(0.8);
 }
 .checkable:disabled{
-    filter:contrast(0.2) brightness(1.2);
+    filter:contrast(0.2) brightness(1.2) !important;
 }
 .checkable.auto{
     -webkit-appearance: auto;
@@ -96,7 +96,6 @@
     --check-img:url("checkable/check-img.png");
 }
 .checkable.check-btn{
-    --padding:0.375rem 0.75rem;
     height:auto;
     width:auto;
     filter: grayscale(0.9) brightness(0.5) contrast(0.5);
@@ -291,4 +290,18 @@ colors / 부트스트랩 호환 4+
 }
 .checkable.border-dark{
     --border-color:var(--dark,#343a40);
+}
+
+
+/**
+* for bootstrap 4
+*/
+.checkable.btn {
+    --padding:0.375rem 0.75rem;
+}
+.checkable.btn-sm {
+    --padding:0.25rem 0.5rem;
+}
+.checkable.btn-lg {
+    --padding:0.5rem 1rem;
 }

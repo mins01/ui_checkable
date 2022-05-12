@@ -85,8 +85,8 @@
                 <div class="btn-group">
                     <input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-btn btn btn-primary" checked>
                     <input type="checkbox" name="f1" value="2" title="2번째" class="checkable check-btn btn btn-success" checked>
-                    <input type="checkbox" name="f1" value="4" title="4번째" class="checkable check-btn btn btn-warning" checked>
-                    <input type="checkbox" name="f1" value="5" title="5번째" class="checkable check-btn btn btn-danger" checked>
+                    <input type="checkbox" name="f1" value="4" title="4번째" class="checkable check-btn btn btn-warning" checked disabled>
+                    <input type="checkbox" name="f1" value="5" title="5번째" class="checkable check-btn btn btn-danger" checked style="--check-btn-text:'오!'">
                 </div>
                 <br>
                 <br>
@@ -94,7 +94,7 @@
                 <div class="btn-group">
                     <input type="radio" name="f2" value="1" title="1번째" class="checkable check-btn btn btn-primary" checked>
                     <input type="radio" name="f2" value="2" title="2번째" class="checkable check-btn btn btn-success" checked>
-                    <input type="radio" name="f2" value="4" title="4번째" class="checkable check-btn btn btn-warning" checked>
+                    <input type="radio" name="f2" value="4" title="4번째" class="checkable check-btn btn btn-warning" checked disabled>
                     <input type="radio" name="f2" value="5" title="5번째" class="checkable check-btn btn btn-danger" checked style="--check-btn-text:'오!'">
                 </div>
             </form>
@@ -105,7 +105,7 @@
                     <input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-btn btn btn-outline-primary" checked>
                     <input type="checkbox" name="f1" value="2" title="2번째" class="checkable check-btn btn btn-outline-success" checked>
                     <input type="checkbox" name="f1" value="4" title="4번째" class="checkable check-btn btn btn-outline-warning" checked>
-                    <input type="checkbox" name="f1" value="5" title="5번째" class="checkable check-btn btn btn-outline-danger" checked>
+                    <input type="checkbox" name="f1" value="5" title="5번째" class="checkable check-btn btn btn-outline-danger" checked style="--check-btn-text:'오!'">
                 </div>
                 <br>
                 <br>
@@ -115,6 +115,25 @@
                     <input type="radio" name="f2" value="2" title="2번째" class="checkable check-btn btn btn-outline-success" checked>
                     <input type="radio" name="f2" value="4" title="4번째" class="checkable check-btn btn btn-outline-warning" checked>
                     <input type="radio" name="f2" value="5" title="5번째" class="checkable check-btn btn btn-outline-danger" checked style="--check-btn-text:'오!'">
+                </div>
+            </form>
+            <form onsubmit="formOnsubmit(this);return false;">
+                <h3>check-btn with bootstrap btn <button class="btn btn-primary btn-sm">submit</button></h3>
+                f1 :
+                <div >
+                    <input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-btn btn btn-primary" checked>
+                    <input type="checkbox" name="f1" value="2" title="2번째" class="checkable check-btn btn btn-success btn-sm" checked>
+                    <input type="checkbox" name="f1" value="4" title="4번째" class="checkable check-btn btn btn-warning btn-lg" checked>
+                    <input type="checkbox" name="f1" value="5" title="5번째" class="checkable check-btn btn btn-danger" checked style="--check-btn-text:'오!'">
+                </div>
+                <br>
+                <br>
+                f2 : 
+                <div class="">
+                    <input type="radio" name="f2" value="1" title="1번째" class="checkable check-btn btn btn-primary" checked>
+                    <input type="radio" name="f2" value="2" title="2번째" class="checkable check-btn btn btn-success btn-sm" checked>
+                    <input type="radio" name="f2" value="4" title="4번째" class="checkable check-btn btn btn-warning btn-lg" checked>
+                    <input type="radio" name="f2" value="5" title="5번째" class="checkable check-btn btn btn-danger" checked style="--check-btn-text:'오!'">
                 </div>
             </form>
             <form onsubmit="formOnsubmit(this);return false;">
