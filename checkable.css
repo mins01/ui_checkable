@@ -24,7 +24,13 @@
     --check-img:none;
     --check-text-font-size:inherit;
     --transition-margin:-1em 0 0 0;
-    
+    --width:1em;
+    --height:1em;
+    --check-btn-text:attr(value);
+
+    height:var(--height,1em);
+    width:var(--width,1em);
+
     font-family: inherit;
     font-size: inherit;
     cursor: inherit;
@@ -34,8 +40,6 @@
 
 
     display: inline-block;
-    height:1em;
-    width:1em;
 
     vertical-align: middle;
     overflow: visible;
@@ -59,8 +63,8 @@
     position: absolute;
     top: 0; bottom: 0; left: 0; right: 0;
     z-index: 3;
-    height:1em;
-    width:1em;
+    height:var(--height,1em);
+    width:var(--width,1em);
     display: block;
     margin: var(--margin);
     padding: var(--padding);
@@ -90,6 +94,28 @@
 }
 .checkable.check-img{
     --check-img:url("checkable/check-img.png");
+}
+.checkable.check-btn{
+    --padding:0.375rem 0.75rem;
+    height:auto;
+    width:auto;
+    filter: grayscale(0.9) brightness(0.5) contrast(0.5);
+}
+.checkable.check-btn:checked{
+    filter: grayscale(0) brightness(1)  contrast(1);
+}
+.checkable.check-btn::before{
+    content: var(--check-btn-text,attr(value));
+    display: inline-block;
+    position: static;
+    --width:auto;
+    --height:auto;
+    --border-width:0px;
+    --background-color:transparent;
+    text-decoration: line-through;
+}
+.checkable.check-btn:checked::before{
+    text-decoration:none;
 }
 
 /* default checked */
@@ -130,8 +156,8 @@
 }
 .checkable.check-mark::after{
     box-sizing: border-box;
-    height:1em;
-    width:1em;
+    height:var(--height,1em);
+    width:var(--width,1em);
     background-color: transparent;
     transform: translate(0, -50%) rotate(-45deg) scaleX(1.4);
     display: flex;
@@ -171,7 +197,9 @@
 .checkable:checked::after{
     display: flex !important;
 }
-
+.checkable.check-btn::after{
+    display: none !important;
+}
 
 /* transition */
 .checkable.transition::after{
