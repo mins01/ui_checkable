@@ -1,52 +1,84 @@
 @charset "utf-8";
 /* 공대여자는 예쁘다 */
 
-.checkable{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-
+/* 변수 (옵션으로 설정안해도 동작한다.) */
+.checkable-var{
     --text-color: #333;
     --background-color: #fff;
     --checked-color: #333;
     --border-color: #aaa;
     --border-width: 0.2em;
     --border-style: solid;
-    --border-radius: 0.5em;
+    --border-radius: 0em;
     --padding:0px;
     --margin:0px;
     --check-text:"✔";
+    --check-text-font-weight: bold;
+    --check-text-font-size:inherit;
+    --check-img:url("checkable/check-img.png");
     --transition-property:all;
     --transition-delay:0s;
     --transition-duration:0.3s;
     --transition-timing-function:ease;
-    --check-text-font-weight: bold;
-    --check-img:none;
-    --check-text-font-size:inherit;
     --transition-margin:-1em 0 0 0;
     --width:1em;
     --height:1em;
     --check-btn-text:attr(value);
+}
+.checkable-var-red{
+    --text-color: #f33;
+    --background-color: #fff;
+    --checked-color: #f33;
+    --border-color: #faa;
+    --check-text:"X";
+    --check-img:url("checkable/check-img-2.png");
+}
 
-    height:var(--height,1em);
-    width:var(--width,1em);
+
+/* 기본 모양 */
+.checkable{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; 
 
     font-family: inherit;
     font-size: inherit;
-    cursor: inherit;
     line-height: inherit;
     box-sizing: border-box;
 
-
-
     display: inline-block;
-
+    
+    height:var(--height,1em);
+    width:var(--width,1em);
     vertical-align: middle;
     overflow: visible;
     position: relative;
+    box-sizing: border-box;
 
-    white-space: nowrap;
+    white-space:nowrap;
 }
+.checkable *{
+    box-sizing: border-box;
+}
+
+/* 베이스 모양 설정 */
+.checkable::before{
+    display: block;
+    content: '';
+    border-color:var(--border-color,#aaa);
+    border-width:var(--border-width,0.2em);
+    border-style:var(--border-style,solid);
+    border-radius: var(--border-radius,0);
+    background-color: var(--background-color,#fff);
+    margin: var(--margin,0);
+    padding: var(--padding,0);
+    height:100%;
+    width:100%;
+}
+
+
+/* 꾸밈 */
+
 .checkable:hover{
     filter:brightness(0.8);
 }
@@ -57,21 +89,6 @@
     -webkit-appearance: auto;
     -moz-appearance: auto;
     appearance: auto; 
-}
-.checkable::before{
-    content: "";
-    position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
-    z-index: 3;
-    height:var(--height,1em);
-    width:var(--width,1em);
-    display: block;
-    margin: var(--margin);
-    padding: var(--padding);
-    border-style: var(--border-style);
-    border-width: var(--border-width);
-    border-color: var(--border-color);
-    background-color: var(--background-color);
 }
 .checkable::after{
     content: none;
@@ -91,9 +108,6 @@
 .checkable.check-box.diamond::after{
     border-radius: 0 !important;
     transform: rotate(45deg);
-}
-.checkable.check-img{
-    --check-img:url("checkable/check-img.png");
 }
 .checkable.check-btn{
     height:auto;
@@ -120,7 +134,7 @@
 /* default checked */
 
 /* .checkable:checked::before{
-    background-color: var(--checked-color);
+    background-color: var(--checked-color,#333);
 } */
 
 
@@ -142,13 +156,17 @@
     z-index: 5;
 }
 .checkable.check-box::after{
-    box-sizing: border-box;
-    margin: var(--margin);
-    padding: var(--padding);
-    border-style: var(--border-style);
-    border-width: var(--border-width);
-    border-color: var(--border-color);
-    background-color: var(--checked-color);
+    display: block;
+    content: '';
+    border-color:var(--border-color,#aaa);
+    border-width:var(--border-width,0.2em);
+    border-style:var(--border-style,solid);
+    border-radius: var(--border-radius,0);
+    background-color: var(--checked-color,#333);
+    margin: var(--margin,0);
+    padding: var(--padding,0);
+    height:100%;
+    width:100%;
 }
 .checkable.check-box::before{
     background-color: transparent;
@@ -162,19 +180,19 @@
     display: flex;
     border-style: solid;
     border-width: calc( var(--border-width) * 1.5);
-    border-color: var(--checked-color);
+    border-color: var(--checked-color,#333);
     border-top-width: 0;
     border-right-width: 0;
     z-index: 5;
 }
 .checkable.check-text::after{
-    content: var(--check-text,'!');
+    content: var(--check-text,'✔');
     background-color: transparent;
-    font-size: var(--check-text-font-size);
-    font-weight: var(--check-text-font-weight);
+    font-size: var(--check-text-font-size,inherit);
+    font-weight: var(--check-text-font-weight,bold);
     line-height: 1em;
     text-align: center;
-    color: var(--checked-color);
+    color: var(--checked-color,#333);
     z-index: 5;
     display: flex;
     flex-direction: row;
@@ -185,7 +203,7 @@
 }
 .checkable.check-img::after{
     background-color: transparent;
-    background-image: var(--check-img);
+    background-image: var(--check-img,url("checkable/check-img.png"));
     background-size: contain;
     background-repeat: no-repeat;
 }
