@@ -1,0 +1,251 @@
+<!doctype html>
+<!-- 공대여자는 예쁘다 -->
+<html lang="ko" >
+<head>
+    <title>checkable</title>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="http://www.mins01.com/favicon.ico">	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <script src="/js/ForGoogle.js"></script>
+    <!-- google analytics -->
+    <script>if(window.ForGoogle){ ForGoogle.analytics() }else{ console.log("failure : ForGoogle.analytics()");}</script>
+    
+    
+    <!-- jquery 관련 -->
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script> -->
+    
+    <!-- 부트스트랩 4 : IE8지원안됨! -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous"> 
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" crossorigin="anonymous"></script>  -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script> -->
+    <!-- vue.js -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    
+    <!-- meta og -->
+    
+    <meta property="og:title" content="checkable-var">
+    <meta property="og:description" content="checkable-var">
+    <meta name="og:image" content="http://www.mins01.com/img/logo.gif">
+    <meta property="og:image:width" content="190">
+    <meta property="og:image:height" content="70" />
+    <meta property="og:site_name" content="checkable-var" />
+    <meta property="og:type" content="website">
+    
+    <!-- //meta og -->
+    <link rel="stylesheet" href="checkable-v2.css" > 
+    <style>
+        .ex label{display: inline-block;margin:0 10px;}
+        .ex form{margin-bottom: 2em; padding:1em; border:1px solid #ccc;}
+    </style>
+    <script>
+        function formOnsubmit(f){
+            let formdata = new FormData(f);
+            alert((new URLSearchParams(formdata)).toString());
+        }
+    </script>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>checkable</h1>
+        <h2>appearance: none 를 활용한 checkbox와 radio 의 모양</h2>
+        <ul class="list-group">
+            <li class="list-group-item"><a href="https://github.com/mins01/ui_checkable">https://github.com/mins01/ui_checkable</a></li>
+            <li class="list-group-item"><a href="https://mins01.github.io/ui_checkable/">https://mins01.github.io/ui_checkable/</a></li>
+        </ul>
+        <hr>
+        <div class="ex">
+            
+            <form onsubmit="formOnsubmit(this);return false;">
+                <h3> checkable <button class="btn btn-primary btn-sm">submit</button></h3>
+                <div >
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable default" checked> default</label>
+                    <label><input type="checkbox" name="f1" value="2" title="2번째" class="checkable square" checked> square</label>
+                    <label><input type="checkbox" name="f1" value="3" title="3번째" class="checkable round" checked> round</label>
+                    <label><input type="checkbox" name="f1" value="4" title="4번째" class="checkable diamond" checked> diamond</label>
+                </div>
+                <hr>
+                <div >
+                    <label><input type="radio" name="f2" value="1" title="1번째" class="checkable default" checked> default</label>
+                    <label><input type="radio" name="f2" value="2" title="2번째" class="checkable square" checked> square</label>
+                    <label><input type="radio" name="f2" value="3" title="3번째" class="checkable round" checked> round</label>
+                    <label><input type="radio" name="f2" value="4" title="4번째" class="checkable diamond" checked> diamond</label>
+                </div>
+            </form>
+
+            <form onsubmit="formOnsubmit(this);return false;">
+                <h3> h1~h6 <button class="btn btn-primary btn-sm">submit</button></h3>
+                <div >
+                    <h1><label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable default" checked> h1</label></h1>
+                    <h2><label><input type="checkbox" name="f1" value="2" title="2번째" class="checkable default" checked> h2</label></h2>
+                    <h3><label><input type="checkbox" name="f1" value="3" title="3번째" class="checkable default" checked> h3</label></h3>
+                    <h4><label><input type="checkbox" name="f1" value="4" title="4번째" class="checkable default" checked> h4</label></h4>
+                    <h5><label><input type="checkbox" name="f1" value="5" title="5번째" class="checkable default" checked> h5</label></h5>
+                    <h6><label><input type="checkbox" name="f1" value="6" title="6번째" class="checkable default" checked> h6</label></h6>
+                </div>
+                <hr>
+                <div>
+                    <h1><label><input type="radio" name="f2" value="1" title="1번째" class="checkable default" checked> h1</label></h1>
+                    <h2><label><input type="radio" name="f2" value="2" title="2번째" class="checkable default" checked> h2</label></h2>
+                    <h3><label><input type="radio" name="f2" value="3" title="3번째" class="checkable default" checked> h3</label></h3>
+                    <h4><label><input type="radio" name="f2" value="4" title="4번째" class="checkable default" checked> h4</label></h4>
+                    <h5><label><input type="radio" name="f2" value="5" title="5번째" class="checkable default" checked> h5</label></h5>
+                    <h6><label><input type="radio" name="f2" value="6" title="6번째" class="checkable default" checked> h6</label></h6>
+                </div>
+            </form>
+            <form onsubmit="formOnsubmit(this);return false;">
+                <h3> checkable check-text <button class="btn btn-primary btn-sm">submit</button></h3>
+                <div >
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked> default</label>
+                    <label><input type="checkbox" name="f1" value="2" title="2번째" class="checkable check-text square" checked> square</label>
+                    <label><input type="checkbox" name="f1" value="3" title="3번째" class="checkable check-text round" checked> round</label>
+                    <label><input type="checkbox" name="f1" value="4" title="4번째" class="checkable check-text diamond" checked> diamond</label>
+                </div>
+                <hr>
+                <div >
+                    <label><input type="radio" name="f2" value="1" title="1번째" class="checkable check-text default" checked> default</label>
+                    <label><input type="radio" name="f2" value="2" title="2번째" class="checkable check-text square" checked> square</label>
+                    <label><input type="radio" name="f2" value="3" title="3번째" class="checkable check-text round" checked> round</label>
+                    <label><input type="radio" name="f2" value="4" title="4번째" class="checkable check-text diamond" checked> diamond</label>
+                </div>
+            </form>
+            <form onsubmit="formOnsubmit(this);return false;">
+                <h3> --check-text-font-size <button class="btn btn-primary btn-sm">submit</button></h3>
+                <div >
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text-font-size:10px"> --check-text-font-size:10px</label>
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text-font-size:20px"> --check-text-font-size:20px</label>
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text-font-size:30px"> --check-text-font-size:30px</label>
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text-font-size:40px"> --check-text-font-size:40px</label>
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text-font-size:0.5em"> --check-text-font-size:0.5em</label>
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text-font-size:1em"> --check-text-font-size:1em</label>
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text-font-size:2em"> --check-text-font-size:2em</label>
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text-font-size:3em"> --check-text-font-size:3em</label>
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text-font-size:4em"> --check-text-font-size:4em</label>
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text-font-size:5em"> --check-text-font-size:5em</label>
+                </div>
+            </form>
+            <form onsubmit="formOnsubmit(this);return false;">
+                <h3> --check-text <button class="btn btn-primary btn-sm">submit</button></h3>
+                <div >
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text:'🦄'"> --check-text:'🦄'</label>
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text:'ABC'"> --check-text:'ABC'</label>
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text:'ON'"> --check-text:'ON'</label>
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked style="--check-text:'●'"> --check-text:'●'</label>
+                </div>
+            </form>
+
+
+            <form onsubmit="formOnsubmit(this);return false;">
+                <h3> checkable check-image <button class="btn btn-primary btn-sm">submit</button></h3>
+                <div >
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-image default" checked> default</label>
+                    <label><input type="checkbox" name="f1" value="2" title="2번째" class="checkable check-image square" checked> square</label>
+                    <label><input type="checkbox" name="f1" value="3" title="3번째" class="checkable check-image round" checked> round</label>
+                    <label><input type="checkbox" name="f1" value="4" title="4번째" class="checkable check-image diamond" checked> diamond</label>
+                </div>
+                <hr>
+                <div >
+                    <label><input type="radio" name="f2" value="1" title="1번째" class="checkable check-image default" checked> default</label>
+                    <label><input type="radio" name="f2" value="2" title="2번째" class="checkable check-image square" checked> square</label>
+                    <label><input type="radio" name="f2" value="3" title="3번째" class="checkable check-image round" checked> round</label>
+                    <label><input type="radio" name="f2" value="4" title="4번째" class="checkable check-image diamond" checked> diamond</label>
+                </div>
+            </form>
+           
+            <form onsubmit="formOnsubmit(this);return false;" class="checkable-var">
+                <h3> checkable-var <button class="btn btn-primary btn-sm">submit</button></h3>
+                <div >
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable default" checked> default</label>
+                    <label><input type="checkbox" name="f1" value="2" title="2번째" class="checkable square" checked> square</label>
+                    <label><input type="checkbox" name="f1" value="3" title="3번째" class="checkable round" checked> round</label>
+                    <label><input type="checkbox" name="f1" value="4" title="4번째" class="checkable diamond" checked> diamond</label>
+                </div>
+                <hr>
+                <div >
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked> default</label>
+                    <label><input type="checkbox" name="f1" value="2" title="2번째" class="checkable check-text square" checked> square</label>
+                    <label><input type="checkbox" name="f1" value="3" title="3번째" class="checkable check-text round" checked> round</label>
+                    <label><input type="checkbox" name="f1" value="4" title="4번째" class="checkable check-text diamond" checked> diamond</label>
+                </div>
+                <hr>
+                <div >
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-image default" checked> default</label>
+                    <label><input type="checkbox" name="f1" value="2" title="2번째" class="checkable check-image square" checked> square</label>
+                    <label><input type="checkbox" name="f1" value="3" title="3번째" class="checkable check-image round" checked> round</label>
+                    <label><input type="checkbox" name="f1" value="4" title="4번째" class="checkable check-image diamond" checked> diamond</label>
+                </div>
+            </form>
+            <form onsubmit="formOnsubmit(this);return false;" class="checkable-var-red">
+                <h3> checkable-var-red (custom checkable-var)<button class="btn btn-primary btn-sm">submit</button></h3>
+                <div >
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable default" checked> default</label>
+                    <label><input type="checkbox" name="f1" value="2" title="2번째" class="checkable square" checked> square</label>
+                    <label><input type="checkbox" name="f1" value="3" title="3번째" class="checkable round" checked> round</label>
+                    <label><input type="checkbox" name="f1" value="4" title="4번째" class="checkable diamond" checked> diamond</label>
+                </div>
+                <hr>
+                <div >
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-text default" checked> default</label>
+                    <label><input type="checkbox" name="f1" value="2" title="2번째" class="checkable check-text square" checked> square</label>
+                    <label><input type="checkbox" name="f1" value="3" title="3번째" class="checkable check-text round" checked> round</label>
+                    <label><input type="checkbox" name="f1" value="4" title="4번째" class="checkable check-text diamond" checked> diamond</label>
+                </div>
+                <hr>
+                <div >
+                    <label><input type="checkbox" name="f1" value="1" title="1번째" class="checkable check-image default" checked> default</label>
+                    <label><input type="checkbox" name="f1" value="2" title="2번째" class="checkable check-image square" checked> square</label>
+                    <label><input type="checkbox" name="f1" value="3" title="3번째" class="checkable check-image round" checked> round</label>
+                    <label><input type="checkbox" name="f1" value="4" title="4번째" class="checkable check-image diamond" checked> diamond</label>
+                </div>
+            </form>
+            <form onsubmit="formOnsubmit(this);return false;">
+                <h3>color(--check-color and --border-color) <button class="btn btn-primary btn-sm">submit</button></h3>
+                <label><input type="checkbox" name="f" value="1" class="checkable border-primary primary" checked> .checkable.border-primary.primary</label>
+                <label><input type="checkbox" name="f" value="2" class="checkable border-secondary secondary" checked> .checkable.border-secondary.secondary</label>
+                <label><input type="checkbox" name="f" value="3" class="checkable border-success success" checked> .checkable.border-success.success</label>
+                <label><input type="checkbox" name="f" value="4" class="checkable border-info info" checked> .checkable.border-info.info</label>
+                <label><input type="checkbox" name="f" value="5" class="checkable border-warning warning" checked> .checkable.border-warning.warning</label>
+                <label><input type="checkbox" name="f" value="6" class="checkable border-danger danger" checked> .checkable.border-danger.danger</label>
+                <label><input type="checkbox" name="f" value="7" class="checkable border-light light" checked> .checkable.border-light.light</label>
+                <label><input type="checkbox" name="f" value="8" class="checkable border-dark dark" checked> .checkable.border-dark.dark</label>
+            </form>
+
+            <form onsubmit="formOnsubmit(this);return false;">
+                <h3>with .transition <button class="btn btn-primary btn-sm">submit</button></h3>
+                <label><input type="checkbox" name="f" value="1" class="checkable transition" checked> .checkable</label>
+                <label><input type="checkbox" name="f" value="4" class="checkable transition check-text" checked> .checkable.check-text</label>
+                <label><input type="checkbox" name="f" value="5" class="checkable transition check-img" checked> .checkable.check-img</label>
+                <hr>
+                <label><input type="radio" name="f2" value="1" class="checkable transition" checked> .checkable</label>
+                <label><input type="radio" name="f2" value="4" class="checkable transition check-text" checked> .checkable.check-text</label>
+                <label><input type="radio" name="f2" value="5" class="checkable transition check-img" checked> .checkable.check-img</label>
+            </form>
+            <form onsubmit="formOnsubmit(this);return false;">
+                <h3>with .transition.transition-margin <button class="btn btn-primary btn-sm">submit</button></h3>
+                <label><input type="checkbox" name="f" value="1" class="checkable transition transition-margin" checked> .checkable</label>
+                <label><input type="checkbox" name="f" value="4" class="checkable transition transition-margin check-text" checked> .checkable.check-text</label>
+                <label><input type="checkbox" name="f" value="5" class="checkable transition transition-margin check-img" checked> .checkable.check-img</label>
+                <hr>
+                <label><input type="radio" name="f2" value="1" class="checkable transition transition-margin " checked> .checkable.transition</label>
+                <label><input type="radio" name="f2" value="4" class="checkable transition transition-margin check-text" checked> .checkable.transition.check-text</label>
+                <label><input type="radio" name="f2" value="5" class="checkable transition transition-margin check-img" checked> .checkable.transition.check-img</label>
+            </form>
+            <form onsubmit="formOnsubmit(this);return false;">
+                <h3>with .transition.transition-blur <button class="btn btn-primary btn-sm">submit</button></h3>
+                <label><input type="checkbox" name="f" value="1" class="checkable transition transition-blur" checked> .checkable</label>
+                <label><input type="checkbox" name="f" value="4" class="checkable transition transition-blur check-text" checked> .checkable.check-text</label>
+                <label><input type="checkbox" name="f" value="5" class="checkable transition transition-blur check-img" checked> .checkable.check-img</label>
+                <hr>
+                <label><input type="radio" name="f2" value="1" class="checkable transition transition-blur" checked> .checkable.transition</label>
+                <label><input type="radio" name="f2" value="4" class="checkable transition transition-blur check-text" checked> .checkable.transition.check-text</label>
+                <label><input type="radio" name="f2" value="5" class="checkable transition transition-blur check-img" checked> .checkable.transition.check-img</label>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
