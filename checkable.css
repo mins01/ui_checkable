@@ -81,10 +81,10 @@
 /* 꾸밈 */
 
 .checkable:hover{
-    filter:brightness(0.8);
+    filter: brightness(1.2);
 }
 .checkable:disabled{
-    filter:contrast(0.2) brightness(1.2) !important;
+    filter: grayscale(1) contrast(2) brightness(0.5) !important;
 }
 .checkable.auto{
     -webkit-appearance: auto;
@@ -126,7 +126,6 @@
     --height:auto;
     --border-width:0px;
     --background-color:transparent;
-    text-decoration: line-through;
 }
 .checkable.check-btn:checked::before{
     text-decoration:none;
@@ -168,9 +167,6 @@
     padding: var(--padding,0);
     height:100%;
     width:100%;
-}
-.checkable.check-box::before{
-    background-color: transparent;
 }
 .checkable.check-mark::after{
     box-sizing: border-box;
