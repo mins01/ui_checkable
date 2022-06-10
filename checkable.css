@@ -13,7 +13,7 @@
     --padding:0px;
     --margin:0px;
     --check-text:"✔";
-    --check-text-font-weight: bold;
+    --check-text-font-weight: normal;
     --check-text-font-size:inherit;
     --check-img:url("checkable/check-img.png");
     --transition-property:all;
@@ -31,6 +31,7 @@
     --checked-color: #f33;
     --border-color: #faa;
     --check-text:"X";
+    --check-text-font-weight: bold;
     --check-img:url("checkable/check-img-2.png");
 }
 
@@ -189,7 +190,7 @@
     content: var(--check-text,'✔');
     background-color: transparent;
     font-size: var(--check-text-font-size,inherit);
-    font-weight: var(--check-text-font-weight,bold);
+    font-weight: var(--check-text-font-weight,nromal);
     line-height: 1em;
     text-align: center;
     color: var(--checked-color,#333);
