@@ -2,39 +2,34 @@
 /* 공대여자는 예쁘다 */
 
 /* 변수 (옵션으로 설정안해도 동작한다.) */
-.checkable-var{
-    --text-color: #333;
-    --background-color: #fff;
-    --checked-color: #333;
-    --border-color: #aaa;
-    --border-width: 0.2em;
-    --border-style: solid;
-    --border-radius: 0em;
-    --padding:0px;
-    --margin:0px;
-    --check-text:"✔";
-    --check-text-font-weight: normal;
-    --check-text-font-size:inherit;
-    --check-img:url("checkable/check-img.png");
-    --transition-property:all;
-    --transition-delay:0s;
-    --transition-duration:0.3s;
-    --transition-timing-function:ease;
-    --transition-margin:-1em 0 0 0;
-    --width:1em;
-    --height:1em;
-    --check-btn-text:attr(value);
-}
-.checkable-var-red{
-    --text-color: #f33;
-    --background-color: #fff;
-    --checked-color: #f33;
-    --border-color: #faa;
-    --check-text:"X";
-    --check-text-font-weight: bold;
-    --check-img:url("checkable/check-img-2.png");
-}
+:root ,
+.checkable-var-reset{
+    --checkable-text-color: #333;
+    --checkable-background-color: #fff;
+    --checkable-checked-color: #333;
+    --checkable-border-color: #aaa;
+    --checkable-border-width:2px;
+    --checkable-border-style: solid;
+    --checkable-border-radius: 0em;
+    --checkable-padding:0px;
+    --checkable-margin:0px;
+    --checkable-check-text:"✔";
+    --checkable-check-text-font-weight: normal;
+    --checkable-check-text-font-size:inherit;
+    --checkable-check-img:url("checkable/check-img.png");
+    --checkable-transition-property:all;
+    --checkable-transition-delay:0s;
+    --checkable-transition-duration:0.3s;
+    --checkable-transition-timing-function:ease;
+    --checkable-transition-margin:-1em 0 0 0;
+    --checkable-width:1em;
+    --checkable-height:1em;
+    --checkable-check-btn-text:attr(value);
+    --checkable-check-box-margin:2px;
+    --checkable-check-box-border-width:var(--checkable-border-width,2px);
 
+    
+}
 
 /* 기본 모양 */
 .checkable{
@@ -49,8 +44,8 @@
 
     display: inline-block;
     
-    height:var(--height,1em);
-    width:var(--width,1em);
+    height:var(--checkable-height,1em);
+    width:var(--checkable-width,1em);
     vertical-align: middle;
     overflow: visible;
     position: relative;
@@ -66,13 +61,13 @@
 .checkable::before{
     display: block;
     content: '';
-    border-color:var(--border-color,#aaa);
-    border-width:var(--border-width,0.2em);
-    border-style:var(--border-style,solid);
-    border-radius: var(--border-radius,0);
-    background-color: var(--background-color,#fff);
-    margin: var(--margin,0);
-    padding: var(--padding,0);
+    border-color:var(--checkable-border-color,#aaa);
+    border-width:var(--checkable-border-width,0.2em);
+    border-style:var(--checkable-border-style,solid);
+    border-radius: var(--checkable-border-radius,0);
+    background-color: var(--checkable-background-color,#fff);
+    margin: var(--checkable-margin,0);
+    padding: var(--checkable-padding,0);
     height:100%;
     width:100%;
 }
@@ -80,9 +75,9 @@
 
 /* 꾸밈 */
 
-.checkable:hover{
+/* .checkable:hover{
     filter: brightness(1.2);
-}
+} */
 .checkable:disabled{
     filter: grayscale(1) contrast(2) brightness(0.5) !important;
 }
@@ -99,7 +94,7 @@
 .checkable.rounded::before,
 .checkable.check-box[type="radio"]::after,
 .checkable.check-box.rounded::after{
-    border-radius: 50% !important;
+    border-radius: 10em !important;
 }
 .checkable.square::before,
 .checkable.check-box.square::after{
@@ -119,13 +114,13 @@
     filter: grayscale(0) brightness(1)  contrast(1);
 }
 .checkable.check-btn::before{
-    content: var(--check-btn-text,attr(value));
+    content: var(--checkable-check-btn-text,attr(value));
     display: inline-block;
     position: static;
-    --width:auto;
-    --height:auto;
-    --border-width:0px;
-    --background-color:transparent;
+    --checkable-width:auto;
+    --checkable-height:auto;
+    --checkable-border-width:0px;
+    --checkable-background-color:transparent;
 }
 .checkable.check-btn:checked::before{
     text-decoration:none;
@@ -134,7 +129,7 @@
 /* default checked */
 
 /* .checkable:checked::before{
-    background-color: var(--checked-color,#333);
+    background-color: var(--checkable-checked-color,#333);
 } */
 
 
@@ -142,7 +137,7 @@
 /* .checkable.check-mark:checked::before ,
 .checkable.check-text:checked::before ,
 .checkable.check-img:checked::before{
-    background-color: var(--background-color);
+    background-color: var(--checkable-background-color);
 } */
 /* .checkable.check-mark.transition::before ,
 .checkable.check-text.transition::before ,
@@ -158,38 +153,47 @@
 .checkable.check-box::after{
     display: block;
     content: '';
-    border-color:var(--border-color,#aaa);
-    border-width:var(--border-width,0.2em);
-    border-style:var(--border-style,solid);
-    border-radius: var(--border-radius,0);
-    background-color: var(--checked-color,#333);
-    margin: var(--margin,0);
-    padding: var(--padding,0);
-    height:100%;
-    width:100%;
+    /* border-color:var(--checkable-background-color,#fff); */
+    border-color:var(--checkable-background-color,#fff);
+    border-width:var(--checkable-check-box-border-width);
+    border-style:var(--checkable-border-style,solid);
+    border-radius: var(--checkable-border-radius,0);
+    background-color: var(--checkable-checked-color,#333);
+    /* margin: var(--checkable-margin,0);
+    padding: var(--checkable-padding,0); */
+    /* height:100%;
+    width:100%; */
+    margin:var(--checkable-check-box-margin);
+    padding:0;
+    /* left:var(--checkable-border-width, 2px);
+    right:var(--checkable-border-width, 2px);
+    top:var(--checkable-border-width, 2px);
+    bottom: var(--checkable-border-width, 2px); */
+    /* left:2px;right:2px;top:2px;bottom:2px; */
 }
 .checkable.check-mark::after{
     box-sizing: border-box;
-    height:var(--height,1em);
-    width:var(--width,1em);
+    height:calc( var(--checkable-height,1em) / 2 );
+    width:var(--checkable-width,1em);
     background-color: transparent;
-    transform: translate(0, -50%) rotate(-45deg) scaleX(1.4);
+    transform: rotate(319deg) scale(1);
+    transform-origin: center top;
     display: flex;
     border-style: solid;
-    border-width: calc( var(--border-width) * 1.5);
-    border-color: var(--checked-color,#333);
+    border-width: 0.25em;
+    border-color: var(--checkable-checked-color,#333);
     border-top-width: 0;
     border-right-width: 0;
     z-index: 5;
 }
 .checkable.check-text::after{
-    content: var(--check-text,'✔');
+    content: var(--checkable-check-text,'✔');
     background-color: transparent;
-    font-size: var(--check-text-font-size,inherit);
-    font-weight: var(--check-text-font-weight,nromal);
+    font-size: var(--checkable-check-text-font-size,inherit);
+    font-weight: var(--checkable-check-text-font-weight,nromal);
     line-height: 1em;
     text-align: center;
-    color: var(--checked-color,#333);
+    color: var(--checkable-checked-color,#333);
     z-index: 5;
     display: flex;
     flex-direction: row;
@@ -200,7 +204,7 @@
 }
 .checkable.check-img::after{
     background-color: transparent;
-    background-image: var(--check-img,url("checkable/check-img.png"));
+    background-image: var(--checkable-check-img,url("checkable/check-img.png"));
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -217,10 +221,10 @@
 
 /* transition */
 .checkable.transition::after{
-    transition-property: var(--transition-property,all);
-    transition-delay: var(--transition-delay,0);
-    transition-duration: var(--transition-duration,0.3s);
-    transition-timing-function:var(--transition-timing-function,ease);
+    transition-property: var(--checkable-transition-property,all);
+    transition-delay: var(--checkable-transition-delay,0);
+    transition-duration: var(--checkable-transition-duration,0.3s);
+    transition-timing-function:var(--checkable-transition-timing-function,ease);
 }
 .checkable.transition::after{
     display: flex !important;
@@ -232,13 +236,6 @@
     visibility: visible;
     opacity: 1;
 }
-.checkable.transition.transition-margin::after{
-    margin: var(--transition-margin, 1em 0 0 0);
-}
-.checkable.transition.transition-margin:checked::after{
-    margin: 0 0 0 0;
-}
-
 .checkable.transition.transition-blur::after{
     filter:blur(0.5em)
 }
@@ -246,65 +243,66 @@
     filter:blur(0);
 }
 
+
 /*
 colors / 부트스트랩 호환 4+
 */
 .checkable.primary{
-    --text-color:var(--primary,#007bff);
-    --checked-color:var(--primary,#007bff);
+    --checkable-text-color:var(--primary,#007bff);
+    --checkable-checked-color:var(--primary,#007bff);
 }
 .checkable.secondary{
-    --text-color:var(--secondary,#6c757d);
-    --checked-color:var(--secondary,#6c757d);
+    --checkable-text-color:var(--secondary,#6c757d);
+    --checkable-checked-color:var(--secondary,#6c757d);
 }
 .checkable.success{
-    --text-color:var(--success,#28a745);
-    --checked-color:var(--success,#28a745);
+    --checkable-text-color:var(--success,#28a745);
+    --checkable-checked-color:var(--success,#28a745);
 }
 .checkable.info{
-    --text-color:var(--info,#17a2b8);
-    --checked-color:var(--info,#17a2b8);
+    --checkable-text-color:var(--info,#17a2b8);
+    --checkable-checked-color:var(--info,#17a2b8);
 }
 .checkable.warning{
-    --text-color:var(--warning,#ffc107);
-    --checked-color:var(--warning,#ffc107);
+    --checkable-text-color:var(--warning,#ffc107);
+    --checkable-checked-color:var(--warning,#ffc107);
 }
 .checkable.danger{
-    --text-color:var(--danger,#dc3545);
-    --checked-color:var(--danger,#dc3545);
+    --checkable-text-color:var(--danger,#dc3545);
+    --checkable-checked-color:var(--danger,#dc3545);
 }
 .checkable.light{
-    --text-color:var(--light,#f8f9fa);
-    --checked-color:var(--light,#f8f9fa);
+    --checkable-text-color:var(--light,#f8f9fa);
+    --checkable-checked-color:var(--light,#f8f9fa);
 }
 .checkable.dark{
-    --text-color:var(--dark,#343a40);
-    --checked-color:var(--dark,#343a40);
+    --checkable-text-color:var(--dark,#343a40);
+    --checkable-checked-color:var(--dark,#343a40);
 }
 
 .checkable.border-primary{
-    --border-color:var(--primary,#007bff);
+    --checkable-border-color:var(--primary,#007bff);
 }
 .checkable.border-secondary{
-    --border-color:var(--secondary,#6c757d);
+    --checkable-border-color:var(--secondary,#6c757d);
 }
 .checkable.border-success{
-    --border-color:var(--success,#28a745);
+    --checkable-border-color:var(--success,#28a745);
 }
 .checkable.border-info{
-    --border-color:var(--info,#17a2b8);
+    --checkable-border-color:var(--info,#17a2b8);
 }
 .checkable.border-warning{
-    --border-color:var(--warning,#ffc107);
+    --checkable-border-color:var(--warning,#ffc107);
 }
 .checkable.border-danger{
-    --border-color:var(--danger,#dc3545);
+    --checkable-border-color:var(--danger,#dc3545);
 }
 .checkable.border-light{
-    --border-color:var(--light,#f8f9fa);
+    --checkable-border-color:var(--light,#f8f9fa);
 }
 .checkable.border-dark{
-    --border-color:var(--dark,#343a40);
+    --checkable-border-color:var(--dark,#343a40);
 }
 
 
@@ -312,11 +310,11 @@ colors / 부트스트랩 호환 4+
 * for bootstrap 4
 */
 .checkable.btn {
-    --padding:0.375rem 0.75rem;
+    --checkable-padding:0.375rem 0.75rem;
 }
 .checkable.btn-sm {
-    --padding:0.25rem 0.5rem;
+    --checkable-padding:0.25rem 0.5rem;
 }
 .checkable.btn-lg {
-    --padding:0.5rem 1rem;
+    --checkable-padding:0.5rem 1rem;
 }

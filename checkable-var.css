@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* 공대여자는 예쁘다 */
+
+/* 변수 (옵션으로 설정안해도 동작한다.) */
+.checkable-var-red{
+    --checkable-border-width: 1px;
+    --checkable-text-color: #f33;
+    --checkable-background-color: #fff;
+    --checkable-checked-color: #f33;
+    --checkable-border-color: #faa;
+    --checkable-check-text:"X";
+    --checkable-check-text-font-weight: bold;
+    --checkable-check-img:url("checkable/check-img-2.png");
+    --checkable-check-box-margin:1px;
+    --checkable-check-box-border-width:1px;
+}
+.checkable-var-blue{
+    --checkable-border-width: 0;
+    --checkable-text-color: #33f;
+    --checkable-background-color: #aaf;
+    --checkable-checked-color: #33f;
+    --checkable-border-color: #aaf;
+    --checkable-check-text:"Y";
+    --checkable-check-text-font-weight: bold;
+    --checkable-check-box-margin:1px;
+    --checkable-check-box-border-width:2px;
+
+}
